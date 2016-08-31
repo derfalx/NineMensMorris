@@ -97,6 +97,8 @@ public class Gameboard
 
   public final boolean setPiece ( Move move, Player player )
   {
+    if (move.nodeTo == null)
+      return false;
     if (move.nodeTo.getPlayerOnThisField() == null)
     {
       move.nodeTo.setPlayerOnThisField( player );
@@ -113,6 +115,8 @@ public class Gameboard
    */
   public final boolean isPieceInMill ( FieldNode node )
   {
+    if (node == null)
+      return false;
     Player player = node.getPlayerOnThisField();
     if ( player == null )
       return false;
@@ -166,7 +170,10 @@ public class Gameboard
     }
 
     if ( !isInMill )
+    {
       isInMill |= this.ownedBySamePlayer( player, node, nodeB, nodeC );
+      isInMill |= this.ownedBySamePlayer( player, node, nodeD, nodeE );
+    }
 
     return isInMill;
   }

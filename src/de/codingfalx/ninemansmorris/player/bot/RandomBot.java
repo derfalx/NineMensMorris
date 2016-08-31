@@ -1,15 +1,11 @@
 package de.codingfalx.ninemansmorris.player.bot;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import de.codingfalx.ninemansmorris.game.FieldNode;
-import de.codingfalx.ninemansmorris.game.Game;
 import de.codingfalx.ninemansmorris.game.GameState.Player;
 import de.codingfalx.ninemansmorris.game.Gameboard;
 import de.codingfalx.ninemansmorris.game.Move;
 import de.codingfalx.ninemansmorris.player.AbstractPlayer;
-import sun.text.resources.cldr.en.FormatData_en_IE;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -119,8 +115,7 @@ public class RandomBot
   protected FieldNode chooseRandomField ( final ArrayList<FieldNode> nodes )
   {
     int randomIndex = (int) ( Math.random() * 100 ) % nodes.size();
-    FieldNode targetNode = nodes.get( randomIndex );
-    return targetNode;
+    return nodes.get( randomIndex );
   }
   //</editor-fold>
 }

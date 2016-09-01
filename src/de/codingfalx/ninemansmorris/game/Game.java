@@ -39,8 +39,9 @@ public class Game
                                        "     / /  | |  | |  __| | | | \\__ \\ | |  | | (_) | |  | |  | \\__ \\ \n" +
                                        "    /_/   |_|  |_|\\___|_| |_| |___/ |_|  |_|\\___/|_|  |_|  |_|___/ \n" +
                                        " written by \n" +
-                                       "          Kristoffer falx Schneider \n" +
+                                       "          Kristoffer 'falx' Schneider \n" +
                                        " within 3 hours\n" +
+                                       " and not fully finished \n"+
                                        "==========================================================\n";
 
 

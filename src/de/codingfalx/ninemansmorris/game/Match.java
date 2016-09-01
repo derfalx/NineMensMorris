@@ -137,9 +137,15 @@ public class Match
         if ( validTurn )
           player.setPiece();
       }
-      if ( this.currentState == GameState.MOVING || this.currentState == GameState.FLYING )
+      else if ( this.currentState == GameState.MOVING )
       {
         move = player.getMove( this.gameboard );
+        boolean freeMove = this.currentState == GameState.FLYING && player.getPlacedPieces() == 3;
+        validTurn = this.gameboard.makeMove( move, this.currentPlayer, freeMove );
+      }
+      else if (  this.currentState == GameState.FLYING )
+      {
+        move = player.getFlyingMove( this.gameboard );
         boolean freeMove = this.currentState == GameState.FLYING && player.getPlacedPieces() == 3;
         validTurn = this.gameboard.makeMove( move, this.currentPlayer, freeMove );
       }
